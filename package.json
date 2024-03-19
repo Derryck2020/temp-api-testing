@@ -1,10 +1,10 @@
 {
-	"name": "temp-testing-api",
+	"name": "06-jobs-api",
 	"version": "1.0.0",
 	"description": "",
 	"main": "app.js",
 	"scripts": {
-		"start": "node app.js",
+		"start": "nodemon app.js",
 		"dev": "nodemon app.js"
 	},
 	"author": "derryck",
@@ -22,7 +22,8 @@
 		"helmet": "^4.6.0",
 		"http-status-codes": "^2.1.4",
 		"joi": "^17.4.0",
-		"jsonwebtoken": "^8.5.1",
+		"jsonwebtoken": "^9.0.2",
+		"mongodb": "^6.5.0",
 		"mongoose": "^8.2.2",
 		"morgan": "^1.10.0",
 		"validator": "^13.6.0",
@@ -32,6 +33,6 @@
 		"nodemon": "^2.0.9"
 	},
 	"engines": {
-		"node": "16.x"
+		"node": "14.x"
 	}
 }
