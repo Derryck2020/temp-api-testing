@@ -10,11 +10,20 @@ const app = express();
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
+
 const helmet = require('helmet');
 const cors = require('cors');
 const rateLimiter = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
+
+// cloudinary
+const cloudinary = require('cloudinary').v2;
+cloudinary.config({
+	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 // database import
 const connectDB = require('./db/connect');
@@ -47,7 +56,7 @@ app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
 
 app.use(express.static('./public'));
-app.use(fileUpload());
+app.use(fileUpload({ useTempFiles: true }));
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
