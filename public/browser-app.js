@@ -1,7 +1,5 @@
-/* !jQuery v1.12.4 | (c) jQuery Foundation | jquery.org/license */ !(function (
-	a,
-	b
-) {
+/* !jQuery v1.12.4 | (c) jQuery Foundation | jquery.org/license */
+!(function (a, b) {
 	'object' == typeof module && 'object' == typeof module.exports
 		? (module.exports = a.document
 				? b(a, !0)
@@ -1413,9 +1411,11 @@
 							i > 1 && sa(m),
 							i > 1 &&
 								qa(
-									a.slice(0, i - 1).concat({
-										value: ' ' === a[i - 2].type ? '*' : '',
-									})
+									a
+										.slice(0, i - 1)
+										.concat({
+											value: ' ' === a[i - 2].type ? '*' : '',
+										})
 								).replace(Q, '$1'),
 							c,
 							e > i && wa(a.slice(i, e)),
